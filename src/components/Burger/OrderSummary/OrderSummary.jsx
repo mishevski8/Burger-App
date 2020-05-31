@@ -1,8 +1,12 @@
-import React from 'react';
-import Aux from '../../../hoc/Aux';
+import React, {Component} from 'react';
+import Aux from '../../../hoc/Aux/Aux';
 import Button from '../../UI/Button/Button';
 
 const orderSummary = (props) => {
+    //This could be function component, doesn't have to be class component
+    // componentDidUpdate(prevProps, prevState, snapshot) {
+    //     console.log('[OrderSummary] did update');
+    // }
 
     const ingredientSummary = Object.keys(props.ingredients)
         .map(igKey => {
@@ -13,7 +17,6 @@ const orderSummary = (props) => {
                 </span> : {props.ingredients[igKey]}
             </li>
         })
-
     return (
         <Aux>
             <h3>Your Order</h3>
@@ -26,7 +29,7 @@ const orderSummary = (props) => {
             <Button clicked={props.purchaseCancelled} btnType="Danger">CANCEL</Button>
             <Button clicked={props.purchaseContinued} btnType="Success">CONTINUE</Button>
         </Aux>
-    )
+    );
 }
 
 export default orderSummary;
