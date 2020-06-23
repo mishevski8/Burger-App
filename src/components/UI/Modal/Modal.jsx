@@ -3,7 +3,7 @@ import classes from './Modal.module.css'
 import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
-class modal extends Component {
+class Modal extends Component {
     shouldComponentUpdate(nextProps, nextState, nextContext) {
         return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
     }
@@ -28,4 +28,4 @@ class modal extends Component {
     }
 }
 
-export default modal;
+export default Modal;
